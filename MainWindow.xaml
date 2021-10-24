@@ -19,12 +19,12 @@
         </GroupBox>
         <GroupBox x:Name="gbFilled" Header="Filled" HorizontalAlignment="Left" Height="228" Margin="637,132,0,0" VerticalAlignment="Top" Width="384" FontWeight="Bold">
             <Canvas>
-                <Label x:Name="___lblLemonFilled" Content="Lemon" Canvas.Left="10" Canvas.Top="20" Height="30" Width="78"/>
+                <Label x:Name="lblLemonFilled" Content="Lemon" Canvas.Left="10" Canvas.Top="20" Height="30" Width="78"/>
                 <TextBox x:Name="txtLemonFilled" Height="30" Canvas.Left="154" TextWrapping="Wrap" Text="0" Canvas.Top="20" Width="142" IsReadOnly="True"/>
                 <Label x:Name="lblChocolateFilled" Content="Chocolate" Canvas.Left="10" Canvas.Top="78" Height="34" Width="107"/>
                 <TextBox x:Name="txtChocolateFilled" Height="23" Canvas.Left="154" TextWrapping="Wrap" Text="0" Canvas.Top="78" Width="146" IsReadOnly="True"/>
                 <Label x:Name="lblVanillaFilled" Content="Vanilla" Canvas.Left="10" Canvas.Top="142" Height="23" Width="78"/>
-                <TextBox x:Name="txtVanillaFilled_" Height="23" Canvas.Left="154" TextWrapping="Wrap" Text="0" Canvas.Top="142" Width="141" IsReadOnly="True"/>
+                <TextBox x:Name="txtVanillaFilled" Height="23" Canvas.Left="154" TextWrapping="Wrap" Text="0" Canvas.Top="142" Width="141" IsReadOnly="True"/>
 
             </Canvas>
         </GroupBox>
@@ -43,26 +43,28 @@
                 <TextBox x:Name="textTotal" Height="23" Canvas.Left="444" TextWrapping="Wrap" Text="0" Canvas.Top="188" Width="154" IsReadOnly="True"/>
                 <Button x:Name="btnAddToSale" Content="Add To Sale" Canvas.Left="710" Canvas.Top="84" Width="96" Height="22" FontWeight="Normal"/>
                 <Button x:Name="btnRemoveItem" Content="Remove Item " Canvas.Left="710" Canvas.Top="124" Width="96" Height="21" FontWeight="Normal"/>
-                <Button x:Name="btnCheckOut_" Content="Check Out" Canvas.Left="710" Canvas.Top="174" Width="96" Height="33" FontWeight="Bold"/>
+                <Button x:Name="btnCheckOut" Content="Check Out" Canvas.Left="710" Canvas.Top="174" Width="96" Height="33" FontWeight="Bold"/>
 
             </Canvas>
         </GroupBox>
         <Menu HorizontalAlignment="Left" Height="22" Margin="43,24,0,0" VerticalAlignment="Top" Width="110">
-            <MenuItem Header="File"/>
+            <MenuItem Header="File">
+            <MenuItem Header="Exit" Click="exitToolStripMenuItem_Click" HorizontalContentAlignment="Stretch"></MenuItem>
+            </MenuItem>
 
             <MenuItem Header="Doughnuts">
                 <MenuItem Header="Make" VerticalAlignment="Bottom">
                     <MenuItem Header="Raised" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                        <MenuItem Header="Glazed" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-                        <MenuItem Header="Sugar" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                        <MenuItem x:Name="glazedToolStripMenuItem" Header="Glazed" HorizontalAlignment="Left" VerticalAlignment="Bottom" IsCheckable="True" Click="glazedToolStripMenuItem_Click"/>
+                        <MenuItem x:Name="sugarToolStripMenuItem" Header="Sugar" HorizontalAlignment="Left" VerticalAlignment="Bottom" IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
                     </MenuItem>
                     <MenuItem Header="Filled" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                        <MenuItem Header="Lemon" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-                        <MenuItem Header="Chocolate" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-                        <MenuItem Header="Vanilla" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                        <MenuItem x:Name="lemonToolStripMenuItem" Header="Lemon" HorizontalAlignment="Left" VerticalAlignment="Bottom" IsCheckable="True"/>
+                        <MenuItem x:Name="chocolateToolStripMenuItem" Header="Chocolate" HorizontalAlignment="Left" VerticalAlignment="Bottom" IsCheckable="True"/>
+                        <MenuItem x:Name="vanillaToolStripMenuItem" Header="Vanilla" HorizontalAlignment="Left" VerticalAlignment="Bottom" IsCheckable="True"/>
                     </MenuItem>
                 </MenuItem>
-                <MenuItem Header="Exit" VerticalAlignment="Bottom"/>
+                <MenuItem x:Name="mnuStop" Header="Stop" VerticalAlignment="Bottom" Click="stopToolStripMenuItem_Click"/>
             </MenuItem>
         </Menu>
 
